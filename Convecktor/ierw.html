@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul{
+			border: 1px solid black;
+			height: 40%; 
+			width: 80%; 
+			background:#d091bc; 		
+		}
+		.body {
+			width: 180px; 
+			height: 150px;
+			border: 3px groove black; 
+			margin: auto; 
+			background: #c5bed4 ;
+			padding: 20px; */
+		}
+
+	</style>
+</head>
+<body>
+	<div class="body" >
+
+		Заработаные деньги <input onkeyup="repl()" type="number" id = "grn">
+
+		Бонусы <input  type="number" id = "bonuse">
+
+		<ul>
+			<li>RUB</li>
+			<li>USA</li>
+			<li>EUR</li>
+		</ul>
+	</div>
+
+
+	<script>
+		
+		
+		var q = [ 2.42 , 0.04 , 0.03 ];
+		 var currence = ['₽','$','€'];
+
+
+		function repl(){
+
+		var input = document.getElementById('grn').value;
+		var li = document.querySelectorAll('li')
+
+			
+
+			function bonuse(){
+				var youBonus = document.getElementById('bonuse');
+
+				if (input <= 1000){
+					youBonus.value = input * 1;
+					youBonus.insertAdjacentHTML.value +='   Бонус 0%'
+				}
+				else if (input >= 1000 && input <= 5000){
+					youBonus.value = input * 1.2;
+					
+				}
+				else if (input >= 5000 && input <= 10000){
+					youBonus.value = input * 1.4;
+				}
+				else if (input > 10000 ){
+					youBonus.value = input * 1.5;
+				}
+
+				for (var i = 0 ; i <= li.length - 1 ; i++) {
+				console.log(li[i].innerHTML)
+				li[i].innerHTML = youBonus.value * q[i] + " " +currence[i] ;			
+			}
+
+			}
+			bonuse();
+
+		}
+
+
+
+	</script> 
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Colculator</title>
+	<!-- <link rel="stylesheet" type="text/css" href="colculet\Colculator.css" /> -->
+	<style>
+
+		button {
+			border: 1px solid black;
+			height: 20px; /* Высота блока */
+			width: 40px; /* Ширина блока */
+			background:#a9a3a3; /* Цвет фона */
+			border-radius:200px
+		}
+
+		#rez{
+			border: 1px solid black;
+			height: 30px;
+			width: 170px;
+			border-radius:10px
+		}
+
+		#sign{
+
+		}
+		.body {
+			width: 180px; /*длина*/
+			height: 130px; /*высота*/
+			border: 3px groove black; /*борты*/	/*groove-толщина борта, связано с px*/
+			margin: auto; /*разместить по центру */ 
+			background: #c3b7da ;
+			padding: 20px; /*ростояние полей до содержимого внутри*/
+		}
+
+		.number{background:white;}
+
+	</style>
+</head>
+<body>
+	<form name="vlad">
+		<div class="body" >
+
+			<input id = "rez" type="text" value=""  >
+
+			<div>	<button id="">..</button>
+					<button id="">..</button>
+					<button id="">..</button>
+					<button id="sign4" onclick="delit()">/</button></div>
+
+			<div> 	<button id="number7" class="number" onclick="seven()">7</button>
+					<button id="number8" class="number" onclick="eight()">8</button>
+					<button id="number9" class="number" onclick="nine()">9</button>
+					<button id="sign3" onclick="multiply()">*</button></div>
+
+			<div>	<button id="number4" class="number" onclick="four()"> 4 </button>
+					<button id="number5" class="number" onclick="five()"> 5 </button>
+					<button id="number6" class="number" onclick="six()"> 6 </button>
+					<button id="sign2" onclick="minus()">-</button></div>
+
+			<div>	<button id="number1" class="number" onclick="one()" >1</button>
+					<button id="number2" class="number" onclick="two()" >2</button>
+					<button id="number3" class="number" onclick="three()">3</button>
+					<button id="sign1" onclick="plus()">+</button></div>
+
+			<div>	<button id="number" onclick="">..</button>
+					<button id="number0" class="number" onclick="zero()">0</button>
+					<button id="number" onclick="">.</button>
+					<button id="sign0" onclick="equally()">=</button></div>	
+		</div>	
+
+</body>
+	<script type="text/javascript">
+
+
+		var text = document.getElementById('rez')
+		// var text1 = document.getElementById('rez1')
+		// var text2 = document.getElementById('rez2')
+
+function plus(){ document.vlad.rez.value = "+"; };
+function minus(){ document.vlad.rez.value = "-"; };
+function multiply(){ document.vlad.rez.value = "*"; };
+function delit(){ document.vlad.rez.value = "/"; };
+
+function zero(){ document.vlad.rez.value += "0"; }
+function one(){ document.vlad.rez.value  += "1"; }
+function two(){ document.vlad.rez.value += "2"; }
+function three(){ document.vlad.rez.value += "3"; } 
+function four(){ document.vlad.rez.value += "4"; }
+function five(){ document.vlad.rez.value += "5"; }
+function six(){ document.vlad.rez.value += "6"; }
+function seven(){ document.vlad.rez.value += "7"; }
+function eight(){ document.vlad.rez.value += "8"; }
+function nine(){ document.vlad.rez.value += "9"; }
+
+// function equally(){
+// 	var a = document.gatElemetById('')value
+// 	document.vlad.rez.value = a;
+// }
+
+		// var num1 = document.getElementById('num1');   получить элемент по индефикатору
+		//num1 = parseInt(num1);	преобразует строку в число
+		// var num2 = document.getElementById("num2");
+
+		 function equally(){
+			var calc = document.getElementById('func').value;
+			switch(calc){
+				case '+':
+				document.getElementById("rez").innerHTML = +num1.value + +num2.value;
+				break;
+				case "-":
+				document.getElementById("rez").innerHTML = +num1.value - +num2.value;
+				break;
+				case "*":
+				document.getElementById("rez").innerHTML = +num1.value * +num2.value;
+				break;
+				case "/":
+				document.getElementById("rez").innerHTML = +num1.value / +num2.value;
+				break;
+			}
+		 }
+	</script>
+
+</body>	
+</html>
